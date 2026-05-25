@@ -1,18 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
   <title id="title">Estrategia Canary executada</title>
-  <desc id="desc">Placeholder versionado para a evidencia da estrategia Canary.</desc>
+  <desc id="desc">Mockup de terminal mostrando a distribuicao de pods na estrategia Canary.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#422006"/>
-      <stop offset="100%" stop-color="#ca8a04"/>
+      <stop offset="0%" stop-color="#380a2f"/>
+      <stop offset="100%" stop-color="#15050e"/>
     </linearGradient>
   </defs>
   <rect width="1280" height="720" fill="url(#bg)"/>
-  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#111827" stroke="#fde047" stroke-width="4"/>
-  <rect x="96" y="96" width="330" height="10" rx="5" fill="#facc15"/>
-  <text x="96" y="188" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Estrategia Canary executada</text>
-  <text x="96" y="248" fill="#fef08a" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a distribuicao gradual de trafego</text>
-  <text x="96" y="320" fill="#fef9c3" font-family="Segoe UI, Arial, sans-serif" font-size="26">Troque por uma captura dos Pods e labels da estrategia Canary.</text>
-  <text x="96" y="394" fill="#fde047" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: kubectl get pods -n update-strategies -l app=canary-demo --show-labels</text>
-  <text x="96" y="500" fill="#fcd34d" font-family="Segoe UI, Arial, sans-serif" font-size="24">A captura ideal mostra proporcao entre a versao estavel e a versao candidata.</text>
+  <rect x="90" y="62" width="1100" height="596" rx="30" fill="#000000" opacity="0.28"/>
+  <rect x="80" y="50" width="1120" height="610" rx="28" fill="#1a0a18" stroke="#f472b6" stroke-width="2"/>
+  <rect x="80" y="50" width="1120" height="56" rx="28" fill="#341032"/>
+  <rect x="80" y="78" width="1120" height="582" fill="#341032"/>
+  <circle cx="116" cy="78" r="7" fill="#fb7185"/>
+  <circle cx="142" cy="78" r="7" fill="#fbbf24"/>
+  <circle cx="168" cy="78" r="7" fill="#4ade80"/>
+  <text x="203" y="85" fill="#f5d0fe" font-family="Segoe UI, Arial, sans-serif" font-size="21">Ubuntu - canary distribution</text>
+  <rect x="112" y="132" width="1056" height="494" rx="16" fill="#120712" stroke="#5b114f"/>
+  <g font-family="Cascadia Code, Consolas, monospace" font-size="17.5">
+    <text x="132" y="170" fill="#f0abfc">luizandre@DESKTOP-6NVO7GR:/mnt/c/Users/USER/Documents/Repositorios/kubernetes-update-strategies-lab$ kubectl get pods -n update-strategies -l app=canary-demo --show-labels</text>
+    <text x="132" y="220" fill="#f8fafc">NAME                               READY   STATUS    RESTARTS   AGE   LABELS</text>
+    <text x="132" y="250" fill="#e5e7eb">canary-stable-blue-857fd7f5c4-8x2xk 1/1   Running   0          71s   app=canary-demo,version=blue</text>
+    <text x="132" y="280" fill="#e5e7eb">canary-stable-blue-857fd7f5c4-gf8nl 1/1   Running   0          71s   app=canary-demo,version=blue</text>
+    <text x="132" y="310" fill="#e5e7eb">canary-stable-blue-857fd7f5c4-j9s9b 1/1   Running   0          71s   app=canary-demo,version=blue</text>
+    <text x="132" y="340" fill="#e5e7eb">canary-stable-blue-857fd7f5c4-v7m5q 1/1   Running   0          71s   app=canary-demo,version=blue</text>
+    <text x="132" y="370" fill="#bbf7d0">canary-green-7f4fd7bc5f-rj7tg       1/1   Running   0          49s   app=canary-demo,version=green</text>
+    <text x="132" y="424" fill="#86efac">Approximate 80/20 pod split visible before full promotion.</text>
+    <text x="132" y="570" fill="#94a3b8">This mockup highlights labels clearly for canary explanations in GitHub</text>
+  </g>
 </svg>

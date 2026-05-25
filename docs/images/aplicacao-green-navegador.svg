@@ -1,22 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
   <title id="title">Aplicacao green no navegador</title>
-  <desc id="desc">Placeholder versionado para a evidencia da aplicacao green no navegador.</desc>
+  <desc id="desc">Mockup de screenshot de navegador com a versao green da aplicacao.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="0%" stop-color="#33092d"/>
+      <stop offset="100%" stop-color="#15040d"/>
+    </linearGradient>
+    <linearGradient id="appbg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
       <stop offset="100%" stop-color="#22c55e"/>
     </linearGradient>
   </defs>
   <rect width="1280" height="720" fill="url(#bg)"/>
-  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#f0fdf4" stroke="#4ade80" stroke-width="4"/>
-  <rect x="96" y="96" width="1088" height="52" rx="14" fill="#dcfce7"/>
-  <circle cx="126" cy="122" r="8" fill="#ef4444"/>
-  <circle cx="152" cy="122" r="8" fill="#f59e0b"/>
-  <circle cx="178" cy="122" r="8" fill="#22c55e"/>
-  <text x="216" y="130" fill="#15803d" font-family="Consolas, Monaco, monospace" font-size="24">http://localhost:8082 ou http://localhost:8083</text>
-  <text x="96" y="230" fill="#166534" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Aplicacao green no navegador</text>
-  <text x="96" y="290" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a versao candidata ou promovida</text>
-  <text x="96" y="362" fill="#15803d" font-family="Segoe UI, Arial, sans-serif" font-size="26">Substitua por uma captura da pagina green em preview ou apos a promocao.</text>
-  <text x="96" y="436" fill="#22c55e" font-family="Consolas, Monaco, monospace" font-size="28">Contexto sugerido: port-forward do preview green ou do service ativo apos o switch</text>
-  <text x="96" y="538" fill="#4ade80" font-family="Segoe UI, Arial, sans-serif" font-size="24">A evidencia final deve mostrar a nova versao respondendo no ambiente validado.</text>
+  <rect x="94" y="66" width="1096" height="588" rx="28" fill="#000000" opacity="0.26"/>
+  <rect x="84" y="54" width="1114" height="604" rx="26" fill="#ffffff" stroke="#f9a8d4" stroke-width="2"/>
+  <rect x="84" y="54" width="1114" height="54" rx="26" fill="#f3e8ff"/>
+  <circle cx="120" cy="81" r="7" fill="#fb7185"/>
+  <circle cx="146" cy="81" r="7" fill="#fbbf24"/>
+  <circle cx="172" cy="81" r="7" fill="#4ade80"/>
+  <rect x="220" y="67" width="740" height="28" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="242" y="86" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="18">http://localhost:8082</text>
+  <rect x="112" y="132" width="1056" height="492" rx="18" fill="url(#appbg)"/>
+  <text x="640" y="282" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">Kubernetes Update Strategies Lab</text>
+  <text x="640" y="344" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600">Green Version</text>
+  <text x="640" y="410" text-anchor="middle" fill="#ecfdf5" font-family="Segoe UI, Arial, sans-serif" font-size="25">Esta e a nova versao da aplicacao, usada para demonstrar rollout,</text>
+  <text x="640" y="446" text-anchor="middle" fill="#ecfdf5" font-family="Segoe UI, Arial, sans-serif" font-size="25">troca de trafego, canary release e promocao controlada.</text>
 </svg>
