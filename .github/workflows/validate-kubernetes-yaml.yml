@@ -1,0 +1,56 @@
+---
+name: Validate Kubernetes YAML
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  yamllint:
+    name: Validate YAML Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install yamllint
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "[INFO] Installing yamllint..."
+          python -m pip install --upgrade pip
+          python -m pip install yamllint
+          echo "[OK] yamllint installed successfully."
+
+      - name: List YAML files to validate
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "[INFO] YAML files found in the repository:"
+          find . -type f \( -name "*.yaml" -o -name "*.yml" \) | sort
+
+      - name: Validate YAML formatting
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mapfile -t yaml_files < <(find . -type f \( -name "*.yaml" -o -name "*.yml" \) | sort)
+
+          if [[ "${#yaml_files[@]}" -eq 0 ]]; then
+            echo "[WARN] No YAML files were found to validate."
+            exit 0
+          fi
+
+          echo "[INFO] Running yamllint on ${#yaml_files[@]} YAML files..."
+          yamllint -c .yamllint.yml "${yaml_files[@]}"
+          echo "[OK] YAML validation completed successfully."

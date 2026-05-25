@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+  namespace: update-strategies
+  labels:
+    app: blue-green-demo
+    version: green
+    strategy: blue-green
+    track: preview
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: blue-green-demo
+      version: green
+  template:
+    metadata:
+      labels:
+        app: blue-green-demo
+        version: green
+        strategy: blue-green
+        track: preview
+    spec:
+      containers:
+        - name: web
+          image: update-demo-green:v2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
