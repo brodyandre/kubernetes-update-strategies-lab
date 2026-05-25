@@ -520,7 +520,7 @@ Exemplo visual do workflow aprovado no GitHub:
 
 - Mantenedor: [brodyandre](https://github.com/brodyandre)
 - Canal recomendado para dúvidas e melhorias: [Issues do repositório](https://github.com/brodyandre/kubernetes-update-strategies-lab/issues)
-- Contato profissional: adicionar um link público de LinkedIn nesta seção é recomendado para facilitar networking técnico e oportunidades.
+- LinkedIn: [luiz-andre-souza-data-engineer](https://www.linkedin.com/in/luiz-andre-souza-data-engineer/)
 
 [Voltar ao índice](#indice)
 
