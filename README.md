@@ -240,7 +240,7 @@ kubectl get nodes -o wide
 
 Resultado esperado desta etapa:
 
-![Cluster k3d criado](docs/images/cluster-k3d-criado.svg)
+![Cluster k3d criado](docs/images/cluster-k3d-criado.png)
 
 ### 5. Buildar as imagens Docker
 
@@ -251,7 +251,7 @@ docker images update-demo-*
 
 Resultado esperado desta etapa:
 
-![Imagens Docker buildadas](docs/images/imagens-docker-buildadas.svg)
+![Imagens Docker buildadas](docs/images/imagens-docker-buildadas.png)
 
 ### 6. Importar imagens para o cluster k3d
 
@@ -261,7 +261,7 @@ Resultado esperado desta etapa:
 
 Resultado esperado desta etapa:
 
-![Imagens importadas no k3d](docs/images/imagens-importadas-k3d.svg)
+![Imagens importadas no k3d](docs/images/imagens-importadas-k3d.png)
 
 ### 7. Aplicar a estratégia Recreate
 
@@ -281,7 +281,7 @@ Abra `http://localhost:8080` no navegador do Windows.
 
 Visual esperado da aplicação base:
 
-![Aplicação blue no navegador](docs/images/aplicacao-blue-navegador.svg)
+![Aplicação blue no navegador](docs/images/aplicacao-blue-navegador.png)
 
 ### 8. Atualizar de blue para green com Recreate
 
@@ -294,7 +294,7 @@ kubectl get pods -n update-strategies -l app=recreate-demo -o wide
 
 Evidência esperada após a troca:
 
-![Estratégia Recreate executada](docs/images/recreate-executada.svg)
+![Estratégia Recreate executada](docs/images/recreate-executada.png)
 
 ### 9. Aplicar a estratégia Ramped
 
@@ -323,7 +323,7 @@ kubectl get pods -n update-strategies -l app=ramped-demo -o wide
 
 Evidência esperada do rollout gradual:
 
-![Estratégia Ramped executada](docs/images/ramped-executada.svg)
+![Estratégia Ramped executada](docs/images/ramped-executada.png)
 
 ### 11. Aplicar Blue/Green
 
@@ -352,7 +352,7 @@ Abra `http://localhost:8082` no navegador para validar a versão `green` em prev
 
 Visual esperado da versão em preview:
 
-![Aplicação green no navegador](docs/images/aplicacao-green-navegador.svg)
+![Aplicação green no navegador](docs/images/aplicacao-green-navegador.png)
 
 ### 13. Trocar o tráfego para green no Blue/Green
 
@@ -366,7 +366,7 @@ Depois da troca, o acesso em `http://localhost:8083` deve passar a responder com
 
 Evidência esperada da troca de tráfego:
 
-![Estratégia Blue/Green executada](docs/images/blue-green-executada.svg)
+![Estratégia Blue/Green executada](docs/images/blue-green-executada.png)
 
 ### 14. Aplicar Canary
 
@@ -395,7 +395,7 @@ kubectl describe deployment canary-green -n update-strategies
 
 Evidência esperada da distribuição canário:
 
-![Estratégia Canary executada](docs/images/canary-executada.svg)
+![Estratégia Canary executada](docs/images/canary-executada.png)
 
 ### 16. Promover green
 
@@ -460,18 +460,18 @@ As imagens do laboratório agora aparecem diretamente ao longo do passo a passo,
 
 | Evidência | Caminho sugerido | Comando ou contexto recomendado |
 |---|---|---|
-| Cluster k3d criado | `docs/images/cluster-k3d-criado.svg` | `kubectl get nodes -o wide` |
-| Imagens Docker buildadas | `docs/images/imagens-docker-buildadas.svg` | `docker images update-demo-*` |
-| Imagens importadas no k3d | `docs/images/imagens-importadas-k3d.svg` | saída de `./scripts/import-images-k3d.sh` |
-| Estratégia Recreate executada | `docs/images/recreate-executada.svg` | `kubectl get pods -n update-strategies -l app=recreate-demo -o wide` |
-| Estratégia Ramped executada | `docs/images/ramped-executada.svg` | `kubectl rollout history deployment/ramped-demo -n update-strategies` |
-| Estratégia Blue/Green executada | `docs/images/blue-green-executada.svg` | `kubectl get svc,endpoints -n update-strategies` |
-| Estratégia Canary executada | `docs/images/canary-executada.svg` | `kubectl get pods -n update-strategies -l app=canary-demo --show-labels` |
-| GitHub Actions validando YAML | `docs/images/github-actions-validando-yaml.svg` | execução bem-sucedida do workflow `Validate Kubernetes YAML` |
-| Aplicação blue no navegador | `docs/images/aplicacao-blue-navegador.svg` | acesso via `kubectl port-forward` |
-| Aplicação green no navegador | `docs/images/aplicacao-green-navegador.svg` | acesso via preview ou promoção de `green` |
+| Cluster k3d criado | `docs/images/cluster-k3d-criado.png` | `kubectl get nodes -o wide` |
+| Imagens Docker buildadas | `docs/images/imagens-docker-buildadas.png` | `docker images update-demo-*` |
+| Imagens importadas no k3d | `docs/images/imagens-importadas-k3d.png` | saída de `./scripts/import-images-k3d.sh` |
+| Estratégia Recreate executada | `docs/images/recreate-executada.png` | `kubectl get pods -n update-strategies -l app=recreate-demo -o wide` |
+| Estratégia Ramped executada | `docs/images/ramped-executada.png` | `kubectl rollout history deployment/ramped-demo -n update-strategies` |
+| Estratégia Blue/Green executada | `docs/images/blue-green-executada.png` | `kubectl get svc,endpoints -n update-strategies` |
+| Estratégia Canary executada | `docs/images/canary-executada.png` | `kubectl get pods -n update-strategies -l app=canary-demo --show-labels` |
+| GitHub Actions validando YAML | `docs/images/github-actions-validando-yaml.png` | execução bem-sucedida do workflow `Validate Kubernetes YAML` |
+| Aplicação blue no navegador | `docs/images/aplicacao-blue-navegador.png` | acesso via `kubectl port-forward` |
+| Aplicação green no navegador | `docs/images/aplicacao-green-navegador.png` | acesso via preview ou promoção de `green` |
 
-Para evitar imagens quebradas no GitHub, o repositório já versiona capturas ilustrativas em SVG, no estilo de screenshots de WSL2 e navegador. Quando você gerar capturas reais, basta substituir os arquivos mantendo os mesmos nomes.
+As evidências abaixo foram atualizadas com capturas reais (terminal + navegador), em PNG, mantendo os mesmos nomes-base para facilitar futuras substituições.
 
 [Voltar ao índice](#indice)
 
@@ -508,14 +508,14 @@ yamllint -c .yamllint.yml .
 
 Exemplo visual do workflow aprovado no GitHub:
 
-![GitHub Actions validando YAML](docs/images/github-actions-validando-yaml.svg)
+![GitHub Actions validando YAML](docs/images/github-actions-validando-yaml.png)
 
 [Voltar ao índice](#indice)
 
 ## Próximos passos
 
 - Adicionar Ingress para facilitar testes externos.
-- Incluir evidências visuais reais no README.
+- Automatizar a geração de evidências visuais reais no README.
 - Automatizar testes HTTP após cada rollout.
 - Comparar este laboratório com abordagens como Argo Rollouts e Flagger.
 - Publicar o projeto com histórico de execução e screenshots.
