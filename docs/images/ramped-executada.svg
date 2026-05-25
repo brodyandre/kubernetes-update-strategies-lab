@@ -1,18 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
   <title id="title">Estrategia Ramped executada</title>
-  <desc id="desc">Placeholder versionado para a evidencia da estrategia Ramped.</desc>
+  <desc id="desc">Mockup de terminal mostrando o historico de rollout do deployment ramped.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#042f2e"/>
-      <stop offset="100%" stop-color="#0f766e"/>
+      <stop offset="0%" stop-color="#36092d"/>
+      <stop offset="100%" stop-color="#16050f"/>
     </linearGradient>
   </defs>
   <rect width="1280" height="720" fill="url(#bg)"/>
-  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#0b1120" stroke="#5eead4" stroke-width="4"/>
-  <rect x="96" y="96" width="330" height="10" rx="5" fill="#14b8a6"/>
-  <text x="96" y="188" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Estrategia Ramped executada</text>
-  <text x="96" y="248" fill="#99f6e4" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para o rollout gradual</text>
-  <text x="96" y="320" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif" font-size="26">Troque por uma captura do historico ou do estado do deployment.</text>
-  <text x="96" y="394" fill="#5eead4" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: kubectl rollout history deployment/ramped-demo -n update-strategies</text>
-  <text x="96" y="500" fill="#7dd3fc" font-family="Segoe UI, Arial, sans-serif" font-size="24">A evidencia ideal mostra revisoes, atualizacao gradual e continuidade do servico.</text>
+  <rect x="90" y="62" width="1100" height="596" rx="30" fill="#000000" opacity="0.28"/>
+  <rect x="80" y="50" width="1120" height="610" rx="28" fill="#1a0a18" stroke="#f472b6" stroke-width="2"/>
+  <rect x="80" y="50" width="1120" height="56" rx="28" fill="#341032"/>
+  <rect x="80" y="78" width="1120" height="582" fill="#341032"/>
+  <circle cx="116" cy="78" r="7" fill="#fb7185"/>
+  <circle cx="142" cy="78" r="7" fill="#fbbf24"/>
+  <circle cx="168" cy="78" r="7" fill="#4ade80"/>
+  <text x="203" y="85" fill="#f5d0fe" font-family="Segoe UI, Arial, sans-serif" font-size="21">Ubuntu - rolling update</text>
+  <rect x="112" y="132" width="1056" height="494" rx="16" fill="#120712" stroke="#5b114f"/>
+  <g font-family="Cascadia Code, Consolas, monospace" font-size="19">
+    <text x="132" y="170" fill="#f0abfc">luizandre@DESKTOP-6NVO7GR:/mnt/c/Users/USER/Documents/Repositorios/kubernetes-update-strategies-lab$ kubectl rollout history deployment/ramped-demo -n update-strategies</text>
+    <text x="132" y="220" fill="#f8fafc">deployment.apps/ramped-demo</text>
+    <text x="132" y="258" fill="#f8fafc">REVISION  CHANGE-CAUSE</text>
+    <text x="132" y="288" fill="#e5e7eb">1         &lt;none&gt;</text>
+    <text x="132" y="318" fill="#e5e7eb">2         &lt;none&gt;</text>
+    <text x="132" y="372" fill="#f0abfc">luizandre@DESKTOP-6NVO7GR:/mnt/c/Users/USER/Documents/Repositorios/kubernetes-update-strategies-lab$ kubectl get pods -n update-strategies -l app=ramped-demo -o wide</text>
+    <text x="132" y="422" fill="#f8fafc">NAME                         READY   STATUS    RESTARTS   AGE   IP         NODE</text>
+    <text x="132" y="452" fill="#e5e7eb">ramped-demo-7f5b8564bd-4x2jp 1/1     Running   0          58s   10.42.1.9  k3d-update-strategies-lab-agent-0</text>
+    <text x="132" y="482" fill="#e5e7eb">ramped-demo-7f5b8564bd-zkfsc 1/1     Running   0          54s   10.42.2.7  k3d-update-strategies-lab-agent-1</text>
+    <text x="132" y="536" fill="#86efac">Rolling update completed with continuous availability across pods.</text>
+  </g>
 </svg>

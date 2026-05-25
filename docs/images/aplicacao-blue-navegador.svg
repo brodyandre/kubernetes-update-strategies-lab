@@ -1,22 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
   <title id="title">Aplicacao blue no navegador</title>
-  <desc id="desc">Placeholder versionado para a evidencia da aplicacao blue no navegador.</desc>
+  <desc id="desc">Mockup de screenshot de navegador com a versao blue da aplicacao.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#172554"/>
-      <stop offset="100%" stop-color="#2563eb"/>
+      <stop offset="0%" stop-color="#34092d"/>
+      <stop offset="100%" stop-color="#15040d"/>
+    </linearGradient>
+    <linearGradient id="appbg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f4c81"/>
+      <stop offset="100%" stop-color="#1d9bf0"/>
     </linearGradient>
   </defs>
   <rect width="1280" height="720" fill="url(#bg)"/>
-  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#eff6ff" stroke="#60a5fa" stroke-width="4"/>
-  <rect x="96" y="96" width="1088" height="52" rx="14" fill="#dbeafe"/>
-  <circle cx="126" cy="122" r="8" fill="#ef4444"/>
-  <circle cx="152" cy="122" r="8" fill="#f59e0b"/>
-  <circle cx="178" cy="122" r="8" fill="#22c55e"/>
-  <text x="216" y="130" fill="#1d4ed8" font-family="Consolas, Monaco, monospace" font-size="24">http://localhost:8080</text>
-  <text x="96" y="230" fill="#1e3a8a" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Aplicacao blue no navegador</text>
-  <text x="96" y="290" fill="#1d4ed8" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a versao estavel exibida via port-forward</text>
-  <text x="96" y="362" fill="#1e40af" font-family="Segoe UI, Arial, sans-serif" font-size="26">Substitua por uma captura da pagina blue carregada no navegador.</text>
-  <text x="96" y="436" fill="#2563eb" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: kubectl port-forward svc/recreate-service -n update-strategies 8080:80</text>
-  <text x="96" y="538" fill="#3b82f6" font-family="Segoe UI, Arial, sans-serif" font-size="24">Essa evidencia ajuda a mostrar a resposta funcional da versao baseline.</text>
+  <rect x="94" y="66" width="1096" height="588" rx="28" fill="#000000" opacity="0.26"/>
+  <rect x="84" y="54" width="1114" height="604" rx="26" fill="#ffffff" stroke="#f9a8d4" stroke-width="2"/>
+  <rect x="84" y="54" width="1114" height="54" rx="26" fill="#f3e8ff"/>
+  <circle cx="120" cy="81" r="7" fill="#fb7185"/>
+  <circle cx="146" cy="81" r="7" fill="#fbbf24"/>
+  <circle cx="172" cy="81" r="7" fill="#4ade80"/>
+  <rect x="220" y="67" width="740" height="28" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="242" y="86" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="18">http://localhost:8080</text>
+  <rect x="112" y="132" width="1056" height="492" rx="18" fill="url(#appbg)"/>
+  <text x="640" y="282" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">Kubernetes Update Strategies Lab</text>
+  <text x="640" y="344" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600">Blue Version</text>
+  <text x="640" y="410" text-anchor="middle" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="25">Esta e a versao estavel inicial da aplicacao, usada como baseline para</text>
+  <text x="640" y="446" text-anchor="middle" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="25">demonstrar estrategias de atualizacao no Kubernetes.</text>
 </svg>

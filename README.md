@@ -238,6 +238,10 @@ kubectl config current-context
 kubectl get nodes -o wide
 ```
 
+Resultado esperado desta etapa:
+
+![Cluster k3d criado](docs/images/cluster-k3d-criado.svg)
+
 ### 5. Buildar as imagens Docker
 
 ```bash
@@ -245,11 +249,19 @@ kubectl get nodes -o wide
 docker images update-demo-*
 ```
 
+Resultado esperado desta etapa:
+
+![Imagens Docker buildadas](docs/images/imagens-docker-buildadas.svg)
+
 ### 6. Importar imagens para o cluster k3d
 
 ```bash
 ./scripts/import-images-k3d.sh
 ```
+
+Resultado esperado desta etapa:
+
+![Imagens importadas no k3d](docs/images/imagens-importadas-k3d.svg)
 
 ### 7. Aplicar a estratégia Recreate
 
@@ -267,6 +279,10 @@ kubectl port-forward svc/recreate-service -n update-strategies 8080:80
 
 Abra `http://localhost:8080` no navegador do Windows.
 
+Visual esperado da aplicação base:
+
+![Aplicação blue no navegador](docs/images/aplicacao-blue-navegador.svg)
+
 ### 8. Atualizar de blue para green com Recreate
 
 ```bash
@@ -275,6 +291,10 @@ kubectl rollout status deployment/recreate-demo -n update-strategies
 kubectl describe deployment recreate-demo -n update-strategies
 kubectl get pods -n update-strategies -l app=recreate-demo -o wide
 ```
+
+Evidência esperada após a troca:
+
+![Estratégia Recreate executada](docs/images/recreate-executada.svg)
 
 ### 9. Aplicar a estratégia Ramped
 
@@ -301,6 +321,10 @@ kubectl rollout history deployment/ramped-demo -n update-strategies
 kubectl get pods -n update-strategies -l app=ramped-demo -o wide
 ```
 
+Evidência esperada do rollout gradual:
+
+![Estratégia Ramped executada](docs/images/ramped-executada.svg)
+
 ### 11. Aplicar Blue/Green
 
 ```bash
@@ -326,6 +350,10 @@ kubectl port-forward svc/blue-green-preview -n update-strategies 8082:80
 
 Abra `http://localhost:8082` no navegador para validar a versão `green` em preview.
 
+Visual esperado da versão em preview:
+
+![Aplicação green no navegador](docs/images/aplicacao-green-navegador.svg)
+
 ### 13. Trocar o tráfego para green no Blue/Green
 
 ```bash
@@ -335,6 +363,10 @@ kubectl get endpoints blue-green-active -n update-strategies
 ```
 
 Depois da troca, o acesso em `http://localhost:8083` deve passar a responder com a versão `green`.
+
+Evidência esperada da troca de tráfego:
+
+![Estratégia Blue/Green executada](docs/images/blue-green-executada.svg)
 
 ### 14. Aplicar Canary
 
@@ -360,6 +392,10 @@ kubectl get endpoints canary-service -n update-strategies
 kubectl describe deployment canary-stable-blue -n update-strategies
 kubectl describe deployment canary-green -n update-strategies
 ```
+
+Evidência esperada da distribuição canário:
+
+![Estratégia Canary executada](docs/images/canary-executada.svg)
 
 ### 16. Promover green
 
@@ -418,7 +454,7 @@ k3d cluster delete update-strategies-lab
 
 ## Evidências de execução
 
-Esta seção foi organizada para receber prints e imagens reais da execução do laboratório. A ideia é manter um conjunto de evidências que mostre tanto preparação do ambiente quanto comportamento das estratégias durante a execução.
+As imagens do laboratório agora aparecem diretamente ao longo do passo a passo, próximas do comando ou comportamento que elas ilustram. Isso deixa a leitura no GitHub mais natural e evita uma galeria separada sem contexto.
 
 ### Mapa das evidências
 
@@ -435,49 +471,7 @@ Esta seção foi organizada para receber prints e imagens reais da execução do
 | Aplicação blue no navegador | `docs/images/aplicacao-blue-navegador.svg` | acesso via `kubectl port-forward` |
 | Aplicação green no navegador | `docs/images/aplicacao-green-navegador.svg` | acesso via preview ou promoção de `green` |
 
-Para evitar imagens quebradas no GitHub, o repositório já versiona placeholders em SVG. Quando você gerar capturas reais, basta substituir os arquivos mantendo os mesmos nomes.
-
-### Placeholders versionados
-
-### 1. Cluster k3d criado
-
-![Cluster k3d criado](docs/images/cluster-k3d-criado.svg)
-
-### 2. Imagens Docker buildadas
-
-![Imagens Docker buildadas](docs/images/imagens-docker-buildadas.svg)
-
-### 3. Imagens importadas no k3d
-
-![Imagens importadas no k3d](docs/images/imagens-importadas-k3d.svg)
-
-### 4. Estratégia Recreate executada
-
-![Estratégia Recreate executada](docs/images/recreate-executada.svg)
-
-### 5. Estratégia Ramped executada
-
-![Estratégia Ramped executada](docs/images/ramped-executada.svg)
-
-### 6. Estratégia Blue/Green executada
-
-![Estratégia Blue/Green executada](docs/images/blue-green-executada.svg)
-
-### 7. Estratégia Canary executada
-
-![Estratégia Canary executada](docs/images/canary-executada.svg)
-
-### 8. GitHub Actions validando YAML
-
-![GitHub Actions validando YAML](docs/images/github-actions-validando-yaml.svg)
-
-### 9. Aplicação blue no navegador
-
-![Aplicação blue no navegador](docs/images/aplicacao-blue-navegador.svg)
-
-### 10. Aplicação green no navegador
-
-![Aplicação green no navegador](docs/images/aplicacao-green-navegador.svg)
+Para evitar imagens quebradas no GitHub, o repositório já versiona capturas ilustrativas em SVG, no estilo de screenshots de WSL2 e navegador. Quando você gerar capturas reais, basta substituir os arquivos mantendo os mesmos nomes.
 
 [Voltar ao índice](#indice)
 
@@ -511,6 +505,10 @@ Se quiser validar localmente:
 ```bash
 yamllint -c .yamllint.yml .
 ```
+
+Exemplo visual do workflow aprovado no GitHub:
+
+![GitHub Actions validando YAML](docs/images/github-actions-validando-yaml.svg)
 
 [Voltar ao índice](#indice)
 
