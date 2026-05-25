@@ -523,7 +523,7 @@ Se quiser validar localmente:
 yamllint -c .yamllint.yml .
 ```
 
-Exemplo visual do workflow aprovado no GitHub:
+Print do workflow aprovado no GitHub:
 
 ![GitHub Actions validando YAML](docs/images/github-actions-validando-yaml.png)
 
