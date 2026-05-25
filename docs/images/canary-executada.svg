@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Estrategia Canary executada</title>
+  <desc id="desc">Placeholder versionado para a evidencia da estrategia Canary.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#422006"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#111827" stroke="#fde047" stroke-width="4"/>
+  <rect x="96" y="96" width="330" height="10" rx="5" fill="#facc15"/>
+  <text x="96" y="188" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Estrategia Canary executada</text>
+  <text x="96" y="248" fill="#fef08a" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a distribuicao gradual de trafego</text>
+  <text x="96" y="320" fill="#fef9c3" font-family="Segoe UI, Arial, sans-serif" font-size="26">Troque por uma captura dos Pods e labels da estrategia Canary.</text>
+  <text x="96" y="394" fill="#fde047" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: kubectl get pods -n update-strategies -l app=canary-demo --show-labels</text>
+  <text x="96" y="500" fill="#fcd34d" font-family="Segoe UI, Arial, sans-serif" font-size="24">A captura ideal mostra proporcao entre a versao estavel e a versao candidata.</text>
+</svg>

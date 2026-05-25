@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Estrategia Ramped executada</title>
+  <desc id="desc">Placeholder versionado para a evidencia da estrategia Ramped.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#042f2e"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#0b1120" stroke="#5eead4" stroke-width="4"/>
+  <rect x="96" y="96" width="330" height="10" rx="5" fill="#14b8a6"/>
+  <text x="96" y="188" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Estrategia Ramped executada</text>
+  <text x="96" y="248" fill="#99f6e4" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para o rollout gradual</text>
+  <text x="96" y="320" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif" font-size="26">Troque por uma captura do historico ou do estado do deployment.</text>
+  <text x="96" y="394" fill="#5eead4" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: kubectl rollout history deployment/ramped-demo -n update-strategies</text>
+  <text x="96" y="500" fill="#7dd3fc" font-family="Segoe UI, Arial, sans-serif" font-size="24">A evidencia ideal mostra revisoes, atualizacao gradual e continuidade do servico.</text>
+</svg>

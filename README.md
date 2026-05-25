@@ -424,58 +424,60 @@ Esta seção foi organizada para receber prints e imagens reais da execução do
 
 | Evidência | Caminho sugerido | Comando ou contexto recomendado |
 |---|---|---|
-| Cluster k3d criado | `docs/images/cluster-k3d-criado.png` | `kubectl get nodes -o wide` |
-| Imagens Docker buildadas | `docs/images/imagens-docker-buildadas.png` | `docker images update-demo-*` |
-| Imagens importadas no k3d | `docs/images/imagens-importadas-k3d.png` | saída de `./scripts/import-images-k3d.sh` |
-| Estratégia Recreate executada | `docs/images/recreate-executada.png` | `kubectl get pods -n update-strategies -l app=recreate-demo -o wide` |
-| Estratégia Ramped executada | `docs/images/ramped-executada.png` | `kubectl rollout history deployment/ramped-demo -n update-strategies` |
-| Estratégia Blue/Green executada | `docs/images/blue-green-executada.png` | `kubectl get svc,endpoints -n update-strategies` |
-| Estratégia Canary executada | `docs/images/canary-executada.png` | `kubectl get pods -n update-strategies -l app=canary-demo --show-labels` |
-| GitHub Actions validando YAML | `docs/images/github-actions-validando-yaml.png` | execução bem-sucedida do workflow `Validate Kubernetes YAML` |
-| Aplicação blue no navegador | `docs/images/aplicacao-blue-navegador.png` | acesso via `kubectl port-forward` |
-| Aplicação green no navegador | `docs/images/aplicacao-green-navegador.png` | acesso via preview ou promoção de `green` |
+| Cluster k3d criado | `docs/images/cluster-k3d-criado.svg` | `kubectl get nodes -o wide` |
+| Imagens Docker buildadas | `docs/images/imagens-docker-buildadas.svg` | `docker images update-demo-*` |
+| Imagens importadas no k3d | `docs/images/imagens-importadas-k3d.svg` | saída de `./scripts/import-images-k3d.sh` |
+| Estratégia Recreate executada | `docs/images/recreate-executada.svg` | `kubectl get pods -n update-strategies -l app=recreate-demo -o wide` |
+| Estratégia Ramped executada | `docs/images/ramped-executada.svg` | `kubectl rollout history deployment/ramped-demo -n update-strategies` |
+| Estratégia Blue/Green executada | `docs/images/blue-green-executada.svg` | `kubectl get svc,endpoints -n update-strategies` |
+| Estratégia Canary executada | `docs/images/canary-executada.svg` | `kubectl get pods -n update-strategies -l app=canary-demo --show-labels` |
+| GitHub Actions validando YAML | `docs/images/github-actions-validando-yaml.svg` | execução bem-sucedida do workflow `Validate Kubernetes YAML` |
+| Aplicação blue no navegador | `docs/images/aplicacao-blue-navegador.svg` | acesso via `kubectl port-forward` |
+| Aplicação green no navegador | `docs/images/aplicacao-green-navegador.svg` | acesso via preview ou promoção de `green` |
 
-### Placeholders para prints
+Para evitar imagens quebradas no GitHub, o repositório já versiona placeholders em SVG. Quando você gerar capturas reais, basta substituir os arquivos mantendo os mesmos nomes.
+
+### Placeholders versionados
 
 ### 1. Cluster k3d criado
 
-![Cluster k3d criado](docs/images/cluster-k3d-criado.png)
+![Cluster k3d criado](docs/images/cluster-k3d-criado.svg)
 
 ### 2. Imagens Docker buildadas
 
-![Imagens Docker buildadas](docs/images/imagens-docker-buildadas.png)
+![Imagens Docker buildadas](docs/images/imagens-docker-buildadas.svg)
 
 ### 3. Imagens importadas no k3d
 
-![Imagens importadas no k3d](docs/images/imagens-importadas-k3d.png)
+![Imagens importadas no k3d](docs/images/imagens-importadas-k3d.svg)
 
 ### 4. Estratégia Recreate executada
 
-![Estratégia Recreate executada](docs/images/recreate-executada.png)
+![Estratégia Recreate executada](docs/images/recreate-executada.svg)
 
 ### 5. Estratégia Ramped executada
 
-![Estratégia Ramped executada](docs/images/ramped-executada.png)
+![Estratégia Ramped executada](docs/images/ramped-executada.svg)
 
 ### 6. Estratégia Blue/Green executada
 
-![Estratégia Blue/Green executada](docs/images/blue-green-executada.png)
+![Estratégia Blue/Green executada](docs/images/blue-green-executada.svg)
 
 ### 7. Estratégia Canary executada
 
-![Estratégia Canary executada](docs/images/canary-executada.png)
+![Estratégia Canary executada](docs/images/canary-executada.svg)
 
 ### 8. GitHub Actions validando YAML
 
-![GitHub Actions validando YAML](docs/images/github-actions-validando-yaml.png)
+![GitHub Actions validando YAML](docs/images/github-actions-validando-yaml.svg)
 
 ### 9. Aplicação blue no navegador
 
-![Aplicação blue no navegador](docs/images/aplicacao-blue-navegador.png)
+![Aplicação blue no navegador](docs/images/aplicacao-blue-navegador.svg)
 
 ### 10. Aplicação green no navegador
 
-![Aplicação green no navegador](docs/images/aplicacao-green-navegador.png)
+![Aplicação green no navegador](docs/images/aplicacao-green-navegador.svg)
 
 [Voltar ao índice](#indice)
 

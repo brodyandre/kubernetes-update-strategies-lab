@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Aplicacao blue no navegador</title>
+  <desc id="desc">Placeholder versionado para a evidencia da aplicacao blue no navegador.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#eff6ff" stroke="#60a5fa" stroke-width="4"/>
+  <rect x="96" y="96" width="1088" height="52" rx="14" fill="#dbeafe"/>
+  <circle cx="126" cy="122" r="8" fill="#ef4444"/>
+  <circle cx="152" cy="122" r="8" fill="#f59e0b"/>
+  <circle cx="178" cy="122" r="8" fill="#22c55e"/>
+  <text x="216" y="130" fill="#1d4ed8" font-family="Consolas, Monaco, monospace" font-size="24">http://localhost:8080</text>
+  <text x="96" y="230" fill="#1e3a8a" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Aplicacao blue no navegador</text>
+  <text x="96" y="290" fill="#1d4ed8" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a versao estavel exibida via port-forward</text>
+  <text x="96" y="362" fill="#1e40af" font-family="Segoe UI, Arial, sans-serif" font-size="26">Substitua por uma captura da pagina blue carregada no navegador.</text>
+  <text x="96" y="436" fill="#2563eb" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: kubectl port-forward svc/recreate-service -n update-strategies 8080:80</text>
+  <text x="96" y="538" fill="#3b82f6" font-family="Segoe UI, Arial, sans-serif" font-size="24">Essa evidencia ajuda a mostrar a resposta funcional da versao baseline.</text>
+</svg>
