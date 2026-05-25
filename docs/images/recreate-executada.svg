@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Estrategia Recreate executada</title>
+  <desc id="desc">Placeholder versionado para a evidencia da estrategia Recreate.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#450a0a"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#14141f" stroke="#fca5a5" stroke-width="4"/>
+  <rect x="96" y="96" width="330" height="10" rx="5" fill="#ef4444"/>
+  <text x="96" y="188" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Estrategia Recreate executada</text>
+  <text x="96" y="248" fill="#fecaca" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a troca direta entre versoes</text>
+  <text x="96" y="320" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="26">Substitua por uma captura dos Pods apos aplicar o rollout.</text>
+  <text x="96" y="394" fill="#fca5a5" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: kubectl get pods -n update-strategies -l app=recreate-demo -o wide</text>
+  <text x="96" y="500" fill="#fda4af" font-family="Segoe UI, Arial, sans-serif" font-size="24">Use a imagem para mostrar indisponibilidade controlada e nova versao ativa.</text>
+</svg>

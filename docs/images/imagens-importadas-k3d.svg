@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Imagens importadas no k3d</title>
+  <desc id="desc">Placeholder versionado para a evidencia da importacao de imagens no k3d.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1c1917"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#111827" stroke="#fbbf24" stroke-width="4"/>
+  <rect x="96" y="96" width="360" height="10" rx="5" fill="#f59e0b"/>
+  <text x="96" y="188" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Imagens importadas no k3d</text>
+  <text x="96" y="248" fill="#fde68a" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a evidencia da carga das imagens no cluster</text>
+  <text x="96" y="320" fill="#fef3c7" font-family="Segoe UI, Arial, sans-serif" font-size="26">Substitua por uma captura da saida do script de importacao.</text>
+  <text x="96" y="394" fill="#fbbf24" font-family="Consolas, Monaco, monospace" font-size="28">Comando sugerido: ./scripts/import-images-k3d.sh</text>
+  <text x="96" y="500" fill="#fcd34d" font-family="Segoe UI, Arial, sans-serif" font-size="24">Essa imagem ajuda a comprovar que o cluster recebeu as duas versoes locais.</text>
+</svg>

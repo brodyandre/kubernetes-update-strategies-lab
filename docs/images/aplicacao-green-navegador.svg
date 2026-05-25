@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Aplicacao green no navegador</title>
+  <desc id="desc">Placeholder versionado para a evidencia da aplicacao green no navegador.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#f0fdf4" stroke="#4ade80" stroke-width="4"/>
+  <rect x="96" y="96" width="1088" height="52" rx="14" fill="#dcfce7"/>
+  <circle cx="126" cy="122" r="8" fill="#ef4444"/>
+  <circle cx="152" cy="122" r="8" fill="#f59e0b"/>
+  <circle cx="178" cy="122" r="8" fill="#22c55e"/>
+  <text x="216" y="130" fill="#15803d" font-family="Consolas, Monaco, monospace" font-size="24">http://localhost:8082 ou http://localhost:8083</text>
+  <text x="96" y="230" fill="#166534" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Aplicacao green no navegador</text>
+  <text x="96" y="290" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a versao candidata ou promovida</text>
+  <text x="96" y="362" fill="#15803d" font-family="Segoe UI, Arial, sans-serif" font-size="26">Substitua por uma captura da pagina green em preview ou apos a promocao.</text>
+  <text x="96" y="436" fill="#22c55e" font-family="Consolas, Monaco, monospace" font-size="28">Contexto sugerido: port-forward do preview green ou do service ativo apos o switch</text>
+  <text x="96" y="538" fill="#4ade80" font-family="Segoe UI, Arial, sans-serif" font-size="24">A evidencia final deve mostrar a nova versao respondendo no ambiente validado.</text>
+</svg>

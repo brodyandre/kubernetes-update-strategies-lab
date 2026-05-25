@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub Actions validando YAML</title>
+  <desc id="desc">Placeholder versionado para a evidencia do workflow de validacao YAML.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="28" fill="#0b1120" stroke="#a5b4fc" stroke-width="4"/>
+  <rect x="96" y="96" width="390" height="10" rx="5" fill="#818cf8"/>
+  <text x="96" y="188" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">GitHub Actions validando YAML</text>
+  <text x="96" y="248" fill="#c7d2fe" font-family="Segoe UI, Arial, sans-serif" font-size="30">Placeholder para a execucao do workflow Validate Kubernetes YAML</text>
+  <text x="96" y="320" fill="#e0e7ff" font-family="Segoe UI, Arial, sans-serif" font-size="26">Substitua por uma captura da aba Actions com o job aprovado.</text>
+  <text x="96" y="394" fill="#a5b4fc" font-family="Consolas, Monaco, monospace" font-size="28">Contexto sugerido: execucao bem-sucedida em push ou pull request</text>
+  <text x="96" y="500" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">A imagem ideal mostra status green, workflow, commit e branch avaliados.</text>
+</svg>
