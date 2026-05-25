@@ -28,6 +28,7 @@ O laboratório usa duas aplicações web estáticas servidas por Nginx, empacota
 - [Evidências de execução](#evidências-de-execução)
 - [Competências demonstradas](#competências-demonstradas)
 - [Validação do repositório](#validação-do-repositório)
+- [Autor e contato](#autor-e-contato)
 - [Próximos passos](#próximos-passos)
 
 ## Objetivo
@@ -246,7 +247,7 @@ Resultado esperado desta etapa:
 
 ```bash
 ./scripts/build-images.sh
-docker images update-demo-*
+docker image ls --filter reference="update-demo-*"
 ```
 
 Resultado esperado desta etapa:
@@ -291,6 +292,8 @@ kubectl rollout status deployment/recreate-demo -n update-strategies
 kubectl describe deployment recreate-demo -n update-strategies
 kubectl get pods -n update-strategies -l app=recreate-demo -o wide
 ```
+
+Observação: na primeira aplicação do manifesto, o `kubectl apply` costuma retornar `configured`; em reexecuções, `unchanged` também é esperado.
 
 Evidência esperada após a troca:
 
@@ -461,7 +464,7 @@ As imagens do laboratório agora aparecem diretamente ao longo do passo a passo,
 | Evidência | Caminho sugerido | Comando ou contexto recomendado |
 |---|---|---|
 | Cluster k3d criado | `docs/images/cluster-k3d-criado.png` | `kubectl get nodes -o wide` |
-| Imagens Docker buildadas | `docs/images/imagens-docker-buildadas.png` | `docker images update-demo-*` |
+| Imagens Docker buildadas | `docs/images/imagens-docker-buildadas.png` | `docker image ls --filter reference="update-demo-*"` |
 | Imagens importadas no k3d | `docs/images/imagens-importadas-k3d.png` | saída de `./scripts/import-images-k3d.sh` |
 | Estratégia Recreate executada | `docs/images/recreate-executada.png` | `kubectl get pods -n update-strategies -l app=recreate-demo -o wide` |
 | Estratégia Ramped executada | `docs/images/ramped-executada.png` | `kubectl rollout history deployment/ramped-demo -n update-strategies` |
@@ -472,6 +475,7 @@ As imagens do laboratório agora aparecem diretamente ao longo do passo a passo,
 | Aplicação green no navegador | `docs/images/aplicacao-green-navegador.png` | acesso via preview ou promoção de `green` |
 
 As evidências abaixo foram atualizadas com capturas reais (terminal + navegador), em PNG, mantendo os mesmos nomes-base para facilitar futuras substituições.
+Campos como nome de Pod, IP, idade (`AGE`) e timestamps podem variar conforme o ambiente e o momento da execução.
 
 [Voltar ao índice](#indice)
 
@@ -512,12 +516,21 @@ Exemplo visual do workflow aprovado no GitHub:
 
 [Voltar ao índice](#indice)
 
+## Autor e contato
+
+- Mantenedor: [brodyandre](https://github.com/brodyandre)
+- Canal recomendado para dúvidas e melhorias: [Issues do repositório](https://github.com/brodyandre/kubernetes-update-strategies-lab/issues)
+- Contato profissional: adicionar um link público de LinkedIn nesta seção é recomendado para facilitar networking técnico e oportunidades.
+
+[Voltar ao índice](#indice)
+
 ## Próximos passos
 
 - Adicionar Ingress para facilitar testes externos.
-- Automatizar a geração de evidências visuais reais no README.
-- Automatizar testes HTTP após cada rollout.
+- Automatizar a geração de evidências (terminal e navegador) via script único versionado em `scripts/`.
+- Automatizar testes HTTP pós-rollout com critérios de sucesso/falha por estratégia.
+- Incluir cenário de rollback validado para `Recreate`, `Ramped`, `Blue/Green` e `Canary`.
 - Comparar este laboratório com abordagens como Argo Rollouts e Flagger.
-- Publicar o projeto com histórico de execução e screenshots.
+- Publicar uma matriz de resultados por execução (tempo de rollout, indisponibilidade e risco observado).
 
 [Voltar ao índice](#indice)
