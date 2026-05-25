@@ -15,11 +15,16 @@
   <rect x="94" y="66" width="1096" height="588" rx="28" fill="#000000" opacity="0.26"/>
   <rect x="84" y="54" width="1114" height="604" rx="26" fill="#ffffff" stroke="#f9a8d4" stroke-width="2"/>
   <rect x="84" y="54" width="1114" height="54" rx="26" fill="#f3e8ff"/>
-  <circle cx="120" cy="81" r="7" fill="#fb7185"/>
-  <circle cx="146" cy="81" r="7" fill="#fbbf24"/>
-  <circle cx="172" cy="81" r="7" fill="#4ade80"/>
-  <rect x="220" y="67" width="740" height="28" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
-  <text x="242" y="86" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="18">http://localhost:8082</text>
+  <rect x="108" y="63" width="220" height="28" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="122" y="70" width="12" height="12" rx="4" fill="#16a34a"/>
+  <text x="142" y="82" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16">localhost:8082</text>
+  <rect x="354" y="67" width="572" height="28" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="376" y="86" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="18">http://localhost:8082</text>
+  <g stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="1122" y1="81" x2="1134" y2="81"/>
+    <rect x="1148" y="72" width="12" height="10" rx="1.5"/>
+    <path d="M1174 72 l12 12 M1186 72 l-12 12"/>
+  </g>
   <rect x="112" y="132" width="1056" height="492" rx="18" fill="url(#appbg)"/>
   <text x="640" y="282" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">Kubernetes Update Strategies Lab</text>
   <text x="640" y="344" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600">Green Version</text>
