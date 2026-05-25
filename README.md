@@ -26,6 +26,7 @@ O laboratório usa duas aplicações web estáticas servidas por Nginx, empacota
 - [Comandos principais](#comandos-principais)
 - [Execução local completa](#execução-local-completa)
 - [Evidências de execução](#evidências-de-execução)
+- [Resultados da execução](#resultados-da-execução)
 - [Competências demonstradas](#competências-demonstradas)
 - [Validação do repositório](#validação-do-repositório)
 - [Autor e contato](#autor-e-contato)
@@ -476,6 +477,18 @@ As imagens do laboratório agora aparecem diretamente ao longo do passo a passo,
 
 As evidências abaixo foram atualizadas com capturas reais (terminal + navegador), em PNG, mantendo os mesmos nomes-base para facilitar futuras substituições.
 Campos como nome de Pod, IP, idade (`AGE`) e timestamps podem variar conforme o ambiente e o momento da execução.
+
+[Voltar ao índice](#indice)
+
+## Resultados da execução
+
+Resumo da execução registrada em 25 de maio de 2026:
+
+- Cluster `k3d-update-strategies-lab` criado e operacional com 1 node control-plane e 2 nodes workers.
+- Imagens `update-demo-blue:v1` e `update-demo-green:v2` buildadas localmente e importadas no cluster.
+- Estratégias `Recreate`, `Ramped`, `Blue/Green` e `Canary` executadas com evidências reais no README.
+- Cenário `Canary` validado com proporção aproximada de 4 réplicas `stable/blue` para 1 réplica `canary/green`.
+- Workflow `Validate Kubernetes YAML` validado no GitHub Actions.
 
 [Voltar ao índice](#indice)
 
