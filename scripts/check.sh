@@ -82,6 +82,10 @@ log_info "Services in namespace '${NAMESPACE}':"
 kubectl get services -n "${NAMESPACE}" -o wide
 
 echo
+log_info "Endpoints in namespace '${NAMESPACE}':"
+kubectl get endpoints -n "${NAMESPACE}"
+
+echo
 log_info "Rollout status for deployments in namespace '${NAMESPACE}':"
 mapfile -t DEPLOYMENTS < <(kubectl get deployments -n "${NAMESPACE}" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}')
 

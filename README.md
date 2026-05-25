@@ -10,6 +10,26 @@ Projeto prático para demonstrar estratégias reais de atualização de aplicaç
 
 O laboratório usa duas aplicações web estáticas servidas por Nginx, empacotadas como imagens Docker locais e executadas em um cluster `k3d`. A partir dessas duas versões, o projeto mostra como diferentes estratégias de atualização afetam disponibilidade, controle de risco e previsibilidade do processo de entrega.
 
+<a id="indice"></a>
+
+## Índice
+
+- [Objetivo](#objetivo)
+- [Aplicações do laboratório](#aplicações-do-laboratório)
+- [Documentação detalhada por estratégia](#documentação-detalhada-por-estratégia)
+- [Tabela comparativa das estratégias](#tabela-comparativa-das-estratégias)
+- [Visão arquitetural do laboratório](#visão-arquitetural-do-laboratório)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Pré-requisitos](#pré-requisitos)
+- [Fluxo de execução recomendado](#fluxo-de-execução-recomendado)
+- [Comandos principais](#comandos-principais)
+- [Execução local completa](#execução-local-completa)
+- [Evidências de execução](#evidências-de-execução)
+- [Competências demonstradas](#competências-demonstradas)
+- [Validação do repositório](#validação-do-repositório)
+- [Próximos passos](#próximos-passos)
+
 ## Objetivo
 
 Este repositório foi estruturado para estudar, executar e documentar quatro abordagens comuns de atualização de aplicações no Kubernetes:
@@ -21,6 +41,8 @@ Este repositório foi estruturado para estudar, executar e documentar quatro abo
 
 Mais do que aplicar manifests, a proposta é evidenciar como Deployments, Services, labels, selectors e probes se combinam para viabilizar transições controladas entre uma versão estável `blue` e uma nova versão `green`.
 
+[Voltar ao índice](#indice)
+
 ## Aplicações do laboratório
 
 | Aplicação | Imagem | Papel no laboratório |
@@ -28,14 +50,31 @@ Mais do que aplicar manifests, a proposta é evidenciar como Deployments, Servic
 | Blue | `update-demo-blue:v1` | Versão estável inicial usada como baseline. |
 | Green | `update-demo-green:v2` | Nova versão usada para atualização, validação e promoção. |
 
-## Comparativo das estratégias
+[Voltar ao índice](#indice)
 
-| Estratégia | Como funciona | Vantagem | Ponto de atenção | Cenário de uso |
-|---|---|---|---|---|
-| `Recreate` | Remove os Pods antigos antes de criar os novos. | Simplicidade operacional e comportamento previsível. | Pode gerar indisponibilidade durante a troca. | Aplicações internas, janelas de manutenção ou cargas que não exigem alta disponibilidade. |
-| `Ramped / Rolling Update` | Substitui os Pods gradualmente, mantendo parte da versão anterior em execução durante o rollout. | Reduz indisponibilidade e permite atualização progressiva. | Exige compatibilidade entre versões coexistindo ao mesmo tempo. | Atualizações contínuas de aplicações stateless. |
-| `Blue / Green` | Mantém duas versões ativas em paralelo e troca o tráfego por meio do Service. | Rollback simples e validação da nova versão antes da ativação. | Consome mais recursos por manter dois ambientes simultâneos. | Publicação controlada com necessidade de reversão rápida. |
-| `Canary` | Direciona parte do tráfego para a nova versão, mantendo a maior parte na versão estável. | Reduz risco ao expor a mudança gradualmente. | Requer acompanhamento mais cuidadoso de comportamento e métricas. | Lançamentos progressivos em produção com validação incremental. |
+## Documentação detalhada por estratégia
+
+Os cenários do laboratório também estão documentados individualmente em arquivos próprios, úteis para revisão rápida, entrevistas técnicas e navegação direta no GitHub:
+
+| Estratégia | Documento |
+|---|---|
+| Recreate | [docs/01-recreate.md](docs/01-recreate.md) |
+| Ramped / Rolling Update | [docs/02-ramped-rolling-update.md](docs/02-ramped-rolling-update.md) |
+| Blue / Green | [docs/03-blue-green.md](docs/03-blue-green.md) |
+| Canary | [docs/04-canary.md](docs/04-canary.md) |
+
+[Voltar ao índice](#indice)
+
+## Tabela comparativa das estratégias
+
+| Estratégia | Como funciona | Disponibilidade durante rollout | Vantagem principal | Ponto de atenção | Cenário de uso |
+|---|---|---|---|---|---|
+| `Recreate` | Remove os Pods antigos antes de criar os novos. | Pode haver indisponibilidade temporária. | Implementação simples e previsível. | Não mantém a aplicação disponível durante toda a troca. | Ambientes internos, testes controlados e janelas de manutenção. |
+| `Ramped / Rolling Update` | Substitui os Pods gradualmente, mantendo parte da versão anterior ativa. | Alta, desde que as versões coexistam bem. | Atualização progressiva sem duplicar todo o ambiente. | Requer compatibilidade entre versões durante a transição. | Aplicações stateless com necessidade de continuidade de serviço. |
+| `Blue / Green` | Mantém duas versões prontas e troca o tráfego via Service. | Alta, com troca explícita de destino. | Rollback rápido e validação prévia da nova versão. | Consome mais recursos por manter dois ambientes simultâneos. | Publicações controladas com necessidade de reversão rápida. |
+| `Canary` | Direciona parte do tráfego para a nova versão antes da promoção total. | Alta, com exposição gradual da mudança. | Reduz risco ao limitar o alcance inicial da nova versão. | Exige observabilidade e acompanhamento mais cuidadoso. | Entregas progressivas em cenários com maior sensibilidade a falhas. |
+
+[Voltar ao índice](#indice)
 
 ## Visão arquitetural do laboratório
 
@@ -54,6 +93,8 @@ Em termos práticos, o laboratório destaca três mecanismos centrais do Kuberne
 2. Comutação de tráfego com Services baseados em labels.
 3. Promoção de versões com manifests explícitos e scripts de apoio.
 
+[Voltar ao índice](#indice)
+
 ## Tecnologias utilizadas
 
 - Kubernetes
@@ -65,6 +106,8 @@ Em termos práticos, o laboratório destaca três mecanismos centrais do Kuberne
 - YAML
 - yamllint
 - GitHub Actions
+
+[Voltar ao índice](#indice)
 
 ## Estrutura do projeto
 
@@ -115,6 +158,8 @@ kubernetes-update-strategies-lab/
         └── validate-kubernetes-yaml.yml
 ```
 
+[Voltar ao índice](#indice)
+
 ## Pré-requisitos
 
 - Docker em execução
@@ -129,6 +174,8 @@ Se necessário, ajuste as permissões dos scripts:
 chmod +x scripts/*.sh
 ```
 
+[Voltar ao índice](#indice)
+
 ## Fluxo de execução recomendado
 
 Para aproveitar melhor o laboratório, a sequência abaixo ajuda a observar a evolução entre as estratégias:
@@ -141,6 +188,25 @@ Para aproveitar melhor o laboratório, a sequência abaixo ajuda a observar a ev
 6. Executar `Blue / Green`, validar preview e trocar o tráfego.
 7. Executar `Canary`, observar a distribuição e promover a nova versão.
 8. Verificar Pods, Deployments, Services, Endpoints e histórico de rollout.
+
+[Voltar ao índice](#indice)
+
+## Comandos principais
+
+| Comando | Objetivo |
+|---|---|
+| `./scripts/setup.sh` | Criar o cluster `k3d`, ajustar o contexto e exibir os nodes. |
+| `./scripts/build-images.sh` | Buildar as imagens `update-demo-blue:v1` e `update-demo-green:v2`. |
+| `./scripts/import-images-k3d.sh` | Importar as imagens locais para o cluster `update-strategies-lab`. |
+| `./scripts/apply-recreate.sh` | Aplicar a estratégia Recreate com a versão `blue`. |
+| `./scripts/apply-ramped.sh` | Aplicar a estratégia Ramped / Rolling Update com a versão `blue`. |
+| `./scripts/apply-blue-green.sh` | Aplicar os Deployments e Services da estratégia Blue / Green. |
+| `./scripts/apply-canary.sh` | Aplicar a estratégia Canary com distribuição inicial entre `blue` e `green`. |
+| `./scripts/check.sh` | Exibir namespace, Pods, Deployments, Services, Endpoints e rollout status. |
+| `./scripts/cleanup.sh` | Remover o namespace `update-strategies` sem apagar o cluster. |
+| `yamllint -c .yamllint.yml .` | Validar a qualidade dos arquivos YAML localmente. |
+
+[Voltar ao índice](#indice)
 
 ## Execução local completa
 
@@ -348,9 +414,28 @@ Remover também o cluster local, se necessário:
 k3d cluster delete update-strategies-lab
 ```
 
+[Voltar ao índice](#indice)
+
 ## Evidências de execução
 
-Esta seção foi organizada para receber prints e imagens reais da execução do laboratório. Os placeholders abaixo podem ser substituídos conforme você gerar as evidências.
+Esta seção foi organizada para receber prints e imagens reais da execução do laboratório. A ideia é manter um conjunto de evidências que mostre tanto preparação do ambiente quanto comportamento das estratégias durante a execução.
+
+### Mapa das evidências
+
+| Evidência | Caminho sugerido | Comando ou contexto recomendado |
+|---|---|---|
+| Cluster k3d criado | `docs/images/cluster-k3d-criado.png` | `kubectl get nodes -o wide` |
+| Imagens Docker buildadas | `docs/images/imagens-docker-buildadas.png` | `docker images update-demo-*` |
+| Imagens importadas no k3d | `docs/images/imagens-importadas-k3d.png` | saída de `./scripts/import-images-k3d.sh` |
+| Estratégia Recreate executada | `docs/images/recreate-executada.png` | `kubectl get pods -n update-strategies -l app=recreate-demo -o wide` |
+| Estratégia Ramped executada | `docs/images/ramped-executada.png` | `kubectl rollout history deployment/ramped-demo -n update-strategies` |
+| Estratégia Blue/Green executada | `docs/images/blue-green-executada.png` | `kubectl get svc,endpoints -n update-strategies` |
+| Estratégia Canary executada | `docs/images/canary-executada.png` | `kubectl get pods -n update-strategies -l app=canary-demo --show-labels` |
+| GitHub Actions validando YAML | `docs/images/github-actions-validando-yaml.png` | execução bem-sucedida do workflow `Validate Kubernetes YAML` |
+| Aplicação blue no navegador | `docs/images/aplicacao-blue-navegador.png` | acesso via `kubectl port-forward` |
+| Aplicação green no navegador | `docs/images/aplicacao-green-navegador.png` | acesso via preview ou promoção de `green` |
+
+### Placeholders para prints
 
 ### 1. Cluster k3d criado
 
@@ -392,6 +477,8 @@ Esta seção foi organizada para receber prints e imagens reais da execução do
 
 ![Aplicação green no navegador](docs/images/aplicacao-green-navegador.png)
 
+[Voltar ao índice](#indice)
+
 ## Competências demonstradas
 
 Este projeto evidencia prática nos seguintes pontos:
@@ -408,6 +495,8 @@ Este projeto evidencia prática nos seguintes pontos:
 - Validação com GitHub Actions
 - Documentação técnica
 
+[Voltar ao índice](#indice)
+
 ## Validação do repositório
 
 O projeto inclui um workflow GitHub Actions para validar arquivos YAML com `yamllint`:
@@ -421,6 +510,8 @@ Se quiser validar localmente:
 yamllint -c .yamllint.yml .
 ```
 
+[Voltar ao índice](#indice)
+
 ## Próximos passos
 
 - Adicionar Ingress para facilitar testes externos.
@@ -428,3 +519,5 @@ yamllint -c .yamllint.yml .
 - Automatizar testes HTTP após cada rollout.
 - Comparar este laboratório com abordagens como Argo Rollouts e Flagger.
 - Publicar o projeto com histórico de execução e screenshots.
+
+[Voltar ao índice](#indice)
