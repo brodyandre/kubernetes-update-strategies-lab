@@ -4,6 +4,7 @@ Desktop.ini
 
 .env
 .env.*
+.kubeconfig-local.yaml
 
 *.log
 *.tmp
