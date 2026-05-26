@@ -217,7 +217,7 @@ Os comandos abaixo consideram um ambiente com Windows 11, WSL2, Docker Desktop, 
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/<seu-usuario>/kubernetes-update-strategies-lab.git
+git clone https://github.com/brodyandre/kubernetes-update-strategies-lab.git
 ```
 
 ### 2. Entrar na pasta do projeto
@@ -405,9 +405,9 @@ Evidência esperada da distribuição canário:
 
 ```bash
 kubectl apply -f manifests/04-canary/promote-green.yaml
+kubectl rollout status deployment/canary-stable-green -n update-strategies
 kubectl scale deployment canary-stable-blue -n update-strategies --replicas=0
 kubectl scale deployment canary-green -n update-strategies --replicas=0
-kubectl rollout status deployment/canary-stable-green -n update-strategies
 kubectl get deployments -n update-strategies
 ```
 

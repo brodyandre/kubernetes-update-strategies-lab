@@ -96,5 +96,6 @@ show_resource_summary
 echo
 log_info "Next steps to promote green:"
 echo "kubectl apply -f manifests/04-canary/promote-green.yaml"
+echo "kubectl rollout status deployment/canary-stable-green -n update-strategies"
 echo "kubectl scale deployment canary-stable-blue -n update-strategies --replicas=0"
 echo "kubectl scale deployment canary-green -n update-strategies --replicas=0"

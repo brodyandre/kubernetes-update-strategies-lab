@@ -40,9 +40,9 @@ Promover a versão `green`:
 
 ```bash
 kubectl apply -f manifests/04-canary/promote-green.yaml
+kubectl rollout status deployment/canary-stable-green -n update-strategies
 kubectl scale deployment canary-stable-blue -n update-strategies --replicas=0
 kubectl scale deployment canary-green -n update-strategies --replicas=0
-kubectl rollout status deployment/canary-stable-green -n update-strategies
 ```
 
 ## Comandos para verificar
